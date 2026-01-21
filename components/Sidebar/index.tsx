@@ -1,0 +1,103 @@
+import { useState } from "react";
+import Link from "next/link";
+import Image from "@/components/Image";
+import Button from "@/components/Button";
+import Icon from "@/components/Icon";
+import Modal from "@/components/Modal";
+import SearchModal from "@/components/SearchModal";
+import Menu from "./Menu";
+import HelpAndCenter from "./HelpAndCenter";
+import Logout from "./Logout";
+
+type Props = {
+    toggle: boolean;
+    visible: boolean;
+    onToggle: () => void;
+    onClose: () => void;
+};
+
+const Sidebar = ({ toggle, visible, onToggle, onClose }: Props) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    return (
+        <>
+            <div
+                className={`fixed top-0 left-0 bottom-0 z-10 flex flex-col bg-white border-r border-gray-100 max-xl:z-30 max-xl:transition-transform max-md:w-full ${toggle ? "w-18" : "w-69"
+                    } ${visible
+                        ? "max-xl:translate-x-0"
+                        : "max-xl:-translate-x-full"
+                    }`}
+            >
+                <div
+                    className={`flex items-center gap-2 border-b border-gray-100 ${toggle
+                        ? "flex-col px-5 py-3"
+                        : "justify-between p-5 max-md:py-4"
+                        }`}
+                >
+                    <a className="flex items-center justify-start" href="/">
+                        <Image
+                            className="w-12 opacity-100"
+                            src="/zeek-logo.svg"
+                            width={48}
+                            height={48}
+                            alt="Zeek"
+                            priority
+                        />
+                    </a>
+                    <Button
+                        className={`!transition-colors max-xl:hidden ${toggle ? "rotate-180" : ""
+                            }`}
+                        icon="chevron"
+                        isSecondary
+                        isXSmall
+                        isSquare
+                        onClick={onToggle}
+                    />
+                    <Button
+                        className="!hidden [&_svg]:!size-6 max-xl:!flex"
+                        icon="close"
+                        isSecondary
+                        isXSmall
+                        isSquare
+                        onClick={onClose}
+                    />
+                </div>
+                <div className="flex flex-col p-4 pt-5 grow overflow-y-auto scrollbar-none">
+                    {!toggle && <SearchModal className="mb-4 max-xl:hidden" />}
+                    <Menu toggle={toggle} />
+                    {toggle ? (
+                        <div className="flex flex-col mt-auto pb-4">
+                            <button
+                                className="group flex items-center justify-center !size-10 rounded-lg cursor-pointer"
+                                onClick={() => setIsModalOpen(true)}
+                            >
+                                <Icon
+                                    className="!size-6 fill-error-100 transition-colors group-hover:fill-error-100/80"
+                                    name="logout"
+                                />
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="mt-auto pt-8">
+                            <button
+                                className="group flex items-center justify-start gap-3 w-full h-12 px-4 rounded-xl text-body-lg font-bold text-white bg-error-100 transition-colors hover:bg-error-200"
+                                onClick={() => setIsModalOpen(true)}
+                            >
+                                <Icon
+                                    className="!size-6 fill-white transition-colors"
+                                    name="logout"
+                                />
+                                Logout
+                            </button>
+                        </div>
+                    )}
+                </div>
+            </div>
+            <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                <Logout onClose={() => setIsModalOpen(false)} />
+            </Modal>
+        </>
+    );
+};
+
+export default Sidebar;
