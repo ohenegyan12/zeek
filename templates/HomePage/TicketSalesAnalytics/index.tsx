@@ -24,7 +24,7 @@ const legend = [
     { label: "Ticket Sold", color: "#DFE1E7" },
 ];
 
-const TicketSalesAnalytics = ({}) => {
+const TicketSalesAnalytics = ({ }) => {
     const [duration, setDuration] = useState(durationOptions[0]);
 
     const CustomTooltip = ({
