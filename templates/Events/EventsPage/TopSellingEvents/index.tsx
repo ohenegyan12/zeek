@@ -11,7 +11,7 @@ import Widget from "@/components/Widget";
 
 import { data } from "./data";
 
-const TopSellingEvents = ({}) => {
+const TopSellingEvents = ({ }) => {
     const CustomTooltip = ({
         payload,
         label,
@@ -47,7 +47,7 @@ const TopSellingEvents = ({}) => {
 
     return (
         <Widget className="grow" title="Top Selling Events">
-            <div className="h-103 pt-5 pr-5 pb-4 max-md:h-98">
+            <div className="h-[25.75rem] pt-5 pr-5 pb-4 max-md:h-[24.5rem]">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         width={500}

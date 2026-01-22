@@ -33,7 +33,7 @@ const ProductAnalytics = () => {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Section title="Most Queried Products">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height={300}>
                     <BarChart
                         layout="vertical"
                         data={productAnalyticsData.mostQueried}
@@ -49,7 +49,7 @@ const ProductAnalytics = () => {
             </Section>
 
             <Section title="Cost Distribution">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height={300}>
                     <PieChart>
                         <Pie
                             data={productAnalyticsData.costDistribution}

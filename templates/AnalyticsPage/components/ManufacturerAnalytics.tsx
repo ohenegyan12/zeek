@@ -25,7 +25,7 @@ const ManufacturerAnalytics = () => {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Section title="Manufacturers by Region">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height={300}>
                     <BarChart
                         layout="vertical"
                         data={manufacturerAnalyticsData.byRegion}
@@ -41,7 +41,7 @@ const ManufacturerAnalytics = () => {
             </Section>
 
             <Section title="Top Manufacturers by Reliability">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height={300}>
                     <BarChart data={manufacturerAnalyticsData.topReliability}>
                         <CartesianGrid strokeDasharray="3 3" vertical={false} />
                         <XAxis dataKey="name" tick={{ fontSize: 11 }} />

@@ -27,7 +27,7 @@ const PricingAndAIAnalytics = () => {
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Section title="Cost Trends Over Time">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height={300}>
                     <LineChart
                         data={pricingTrendsData}
                         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
@@ -42,7 +42,7 @@ const PricingAndAIAnalytics = () => {
             </Section>
 
             <Section title="AI Query Volume">
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height={300}>
                     <AreaChart
                         data={aiAnalyticsData.queryVolume}
                         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
