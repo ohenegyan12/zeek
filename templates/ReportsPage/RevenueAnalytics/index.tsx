@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SelectOption } from "@/types/select";
 import {
     ResponsiveContainer,
     AreaChart,
@@ -26,8 +27,8 @@ const legend = [
     { label: "Last period", color: "#B6CFFF" },
 ];
 
-const RevenueAnalytics = ({}) => {
-    const [duration, setDuration] = useState(durationOptions[0]);
+const RevenueAnalytics = ({ }) => {
+    const [duration, setDuration] = useState<SelectOption>(durationOptions[0]);
 
     const formatterYAxis = (value: number) => {
         if (value === 0) {

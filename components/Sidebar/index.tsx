@@ -6,7 +6,7 @@ import Icon from "@/components/Icon";
 import Modal from "@/components/Modal";
 import SearchModal from "@/components/SearchModal";
 import Menu from "./Menu";
-import HelpAndCenter from "./HelpAndCenter";
+
 import Logout from "./Logout";
 
 type Props = {
@@ -34,7 +34,7 @@ const Sidebar = ({ toggle, visible, onToggle, onClose }: Props) => {
                         : "justify-between p-5 max-md:py-4"
                         }`}
                 >
-                    <a className="flex items-center justify-start" href="/">
+                    <Link className="flex items-center justify-start" href="/">
                         <Image
                             className="w-12 opacity-100"
                             src="/zeek-logo.svg"
@@ -43,7 +43,7 @@ const Sidebar = ({ toggle, visible, onToggle, onClose }: Props) => {
                             alt="Zeek"
                             priority
                         />
-                    </a>
+                    </Link>
                     <Button
                         className={`!transition-colors max-xl:hidden ${toggle ? "rotate-180" : ""
                             }`}

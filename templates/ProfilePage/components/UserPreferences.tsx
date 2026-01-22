@@ -56,7 +56,7 @@ const UserPreferences = ({ preferences, onSave }: Props) => {
                             label="Language"
                             options={languages}
                             value={languages.find(l => l.id === language) || languages[0]}
-                            onChange={(opt) => setLanguage(opt.id)}
+                            onChange={(opt) => setLanguage(opt.id as string)}
                         />
                     </div>
                 </div>

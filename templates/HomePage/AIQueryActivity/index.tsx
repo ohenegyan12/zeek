@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SelectOption } from "@/types/select";
 import {
     BarChart,
     Bar,
@@ -20,7 +21,7 @@ const durationOptions = [
 ];
 
 const AIQueryActivity = () => {
-    const [duration, setDuration] = useState(durationOptions[0]);
+    const [duration, setDuration] = useState<SelectOption>(durationOptions[0]);
 
     const CustomTooltip = ({
         payload,

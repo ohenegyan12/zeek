@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SelectOption } from "@/types/select";
 import Field from "@/components/Field";
 import Select from "@/components/Select";
 import Button from "@/components/Button";
@@ -19,8 +20,8 @@ const statusOptions = [
 
 const Filters = () => {
     const [search, setSearch] = useState("");
-    const [dateRange, setDateRange] = useState(dateOptions[1]);
-    const [status, setStatus] = useState(statusOptions[0]);
+    const [dateRange, setDateRange] = useState<SelectOption>(dateOptions[1]);
+    const [status, setStatus] = useState<SelectOption>(statusOptions[0]);
 
     return (
         <div className="flex flex-col gap-4 p-5 border border-gray-100 rounded-2xl bg-white mt-6">

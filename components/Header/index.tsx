@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Icon from "@/components/Icon";
+
 import Button from "@/components/Button";
 import SearchModal from "@/components/SearchModal";
 import Notifications from "./Notifications";

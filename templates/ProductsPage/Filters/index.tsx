@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SelectOption } from "@/types/select";
 import Field from "@/components/Field";
 import Select from "@/components/Select";
 import Button from "@/components/Button";
@@ -26,9 +27,9 @@ const statusOptions = [
 
 const ProductsFilters = () => {
     const [search, setSearch] = useState("");
-    const [category, setCategory] = useState(categoryOptions[0]);
-    const [region, setRegion] = useState(regionOptions[0]);
-    const [status, setStatus] = useState(statusOptions[0]);
+    const [category, setCategory] = useState<SelectOption>(categoryOptions[0]);
+    const [region, setRegion] = useState<SelectOption>(regionOptions[0]);
+    const [status, setStatus] = useState<SelectOption>(statusOptions[0]);
 
     return (
         <div className="flex flex-col gap-4 p-5 border border-gray-100 rounded-2xl bg-white mt-6">
