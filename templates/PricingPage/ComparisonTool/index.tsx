@@ -42,7 +42,7 @@ const ComparisonTool = ({ products, open, onClose }: Props) => {
             <div className="flex flex-col gap-6">
                 <div className="h-80 w-full">
                     <h3 className="text-body-lg font-semibold mb-4">Cost Breakdown</h3>
-                    <ResponsiveContainer width="100%" height="100%">
+                    <ResponsiveContainer width="100%" height={280}>
                         <BarChart
                             data={data}
                             margin={{

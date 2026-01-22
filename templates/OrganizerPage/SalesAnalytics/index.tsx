@@ -16,7 +16,7 @@ const legend = [
     { label: "Tickets Sold", color: "#1565FF" },
 ];
 
-const SalesAnalytics = ({}) => {
+const SalesAnalytics = ({ }) => {
     const formatterYAxis = (value: number) => {
         if (value === 0) {
             return "$0";
@@ -46,7 +46,7 @@ const SalesAnalytics = ({}) => {
                 </div>
             }
         >
-            <div className="h-85 pt-2.5 pr-5 pb-5">
+            <div className="h-[21.25rem] pt-2.5 pr-5 pb-5">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         width={500}
