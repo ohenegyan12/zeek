@@ -75,7 +75,7 @@ const AIQueryActivity = () => {
                     </div>
                 </div>
             </div>
-            <div className="h-79.5 pr-5 pb-4 max-md:-ml-1.5">
+            <div className="h-80 pr-5 pb-4 max-md:-ml-1.5">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         data={data}

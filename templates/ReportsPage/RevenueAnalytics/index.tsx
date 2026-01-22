@@ -95,7 +95,7 @@ const RevenueAnalytics = ({ }) => {
                     ))}
                 </div>
             </div>
-            <div className="h-50 -ml-1 pt-2 pr-5 pb-4">
+            <div className="h-[12.5rem] -ml-1 pt-2 pr-5 pb-4">
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart
                         width={730}
